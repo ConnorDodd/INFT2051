@@ -1,6 +1,4 @@
-﻿using INFT2051_W3.Pages;
-
-namespace INFT2051_W3;
+﻿namespace INFT2051_W3;
 
 public partial class MainPage : ContentPage
 {
@@ -8,11 +6,6 @@ public partial class MainPage : ContentPage
 	{
 		//NavigationPage.SetHasNavigationBar(this, false);
 		InitializeComponent();
-	}
-
-	private void CharacterButton_Clicked(object sender, EventArgs e)
-	{
-		Navigation.PushAsync(new CharacterTabPage());
 	}
 }
 

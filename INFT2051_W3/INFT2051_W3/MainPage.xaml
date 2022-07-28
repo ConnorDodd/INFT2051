@@ -10,12 +10,6 @@
             Padding="30,0" 
             VerticalOptions="Center">
 
-            <Button
-                x:Name="CharacterButton"
-                Text="My Character"
-                HorizontalOptions="Center"
-                Clicked="CharacterButton_Clicked"/>
-
         </VerticalStackLayout>
     </ScrollView>
  

@@ -14,13 +14,6 @@ namespace INFT2051_W3.Models
         public string Class { get; set; }
         public int HPTotal { get; set; } = 1;
         public int HPCurrent { get; set; }
-        public double HPPercent
-        {
-            get
-            {
-                return (double)HPCurrent / HPTotal;
-            }
-        }
         public int Iniative { get; set; }
         public int Speed { get; set; }
         public int Inspiration { get; set; }

@@ -19,7 +19,7 @@
             Text="Class:"
             FontAttributes="Bold"/>
         <Picker
-            HorizontalOptions="FillAndExpand"
+            SelectedItem="{Binding Class}"
             ItemsSource="{x:Static models:ClassDetails.Classes}">
         </Picker>
 
@@ -42,7 +42,6 @@
         </Label>
         <ProgressBar
             Progress="{Binding HPPercent}"
-            HeightRequest="32"
             ProgressColor="Red"/>
 
         <Label
