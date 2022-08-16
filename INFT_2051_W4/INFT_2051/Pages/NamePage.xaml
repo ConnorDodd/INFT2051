@@ -4,34 +4,24 @@
              x:Class="INFT2051.Pages.NamePage"
              xmlns:models="clr-namespace:INFT_2051.Models"
              Title="NamePage">
-    <VerticalStackLayout
-        Margin="20">
+    <VerticalStackLayout>
 
-        <Label
-            Text="Name:"
-            FontAttributes="Bold"/>
         <Entry
             Text="{Binding Name}"
+            BackgroundColor="White"
+            Background="White"
             Placeholder="Name"
-            Margin="0, 20"/>
-
-        <Label
-            Text="Class:"
-            FontAttributes="Bold"/>
+            Grid.Column="1"
+            Grid.Row="0"/>
         <Picker
+            Grid.Column="1"
+            Grid.Row="1"
             SelectedItem="{Binding Class}"
-            ItemsSource="{x:Static models:ClassDetails.Classes}">
-        </Picker>
+            ItemsSource="{x:Static models:ClassDetails.Classes}"/>
 
         <Label
             Text="HP:"
             FontAttributes="Bold"/>
-        <Stepper
-            x:Name="HPStepper"
-            Value="{Binding HPCurrent}"
-            Minimum="0"
-            Maximum="{Binding HPTotal}"
-            ValueChanged="HPStepper_ValueChanged"/>
         <Label>
             <Label.Text>
                 <MultiBinding StringFormat="{}{0} / {1}">
@@ -40,12 +30,20 @@
                 </MultiBinding>
             </Label.Text>
         </Label>
+        <Stepper
+            FlexLayout.Grow="0"
+            x:Name="HPStepper"
+            Value="{Binding HPCurrent}"
+            Minimum="0"
+            Maximum="{Binding HPTotal}"
+            ValueChanged="HPStepper_ValueChanged"/>
         <ProgressBar
             Progress="{Binding HPPercent}"
             ProgressColor="Red"/>
 
         <Label
             Text="Death Saves:"
+            VerticalOptions="Center"
             FontAttributes="Bold"/>
         <CheckBox
             IsChecked="{Binding DeathSave1}"/>

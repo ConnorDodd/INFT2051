@@ -5,17 +5,12 @@
              Title="INFT_2051">
 
     <ScrollView>
-        <VerticalStackLayout 
-            Spacing="25" 
-            Padding="30,0" 
-            VerticalOptions="Center">
-
+        <VerticalStackLayout>
             <Button
                 x:Name="CharacterButton"
-                Text="My Character"
+                Text="My Characters"
                 HorizontalOptions="Center"
                 Clicked="CharacterButton_Clicked"/>
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

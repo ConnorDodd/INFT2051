@@ -1,4 +1,5 @@
-﻿using INFT2051.Pages;
+﻿using INFT_2051.Pages;
+using INFT2051.Pages;
 
 namespace INFT_2051;
 
@@ -11,7 +12,7 @@ public partial class MainPage : ContentPage
 
     private void CharacterButton_Clicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new CharacterTabPage());
+        Navigation.PushAsync(new CharacterSelectPage());
     }
 }
 

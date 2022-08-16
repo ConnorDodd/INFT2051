@@ -5,17 +5,25 @@
              Title="INFT_2051">
 
     <ScrollView>
-        <VerticalStackLayout 
-            Spacing="25" 
-            Padding="30,0" 
-            VerticalOptions="Center">
+        <FlexLayout
+            Direction="Column"
+            JustifyContent="SpaceEvenly"
+            AlignItems="Center">
+
+            <Image
+                Source="dragon.png"
+                WidthRequest="200"/>
+
+            <Label
+                Text="INFT2051 Demo App"
+                Style="{StaticResource HomeLabel}"/>
 
             <Button
                 x:Name="CharacterButton"
-                Text="My Character"
+                Text="My Characters"
                 HorizontalOptions="Center"
                 Clicked="CharacterButton_Clicked"/>
 
-        </VerticalStackLayout>
+        </FlexLayout>
     </ScrollView>
 </ContentPage>
