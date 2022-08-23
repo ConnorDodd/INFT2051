@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INFT2051.Pages.StatsPage"
+             Title="Stats Page">
+    <VerticalStackLayout
+        Padding="20">
+        <Label
+            Text="Strength:"
+            FontAttributes="Bold"/>
+        <Entry
+            Text="{Binding StatStrength}"
+            Keyboard="Numeric"/>
+        <Label
+            Text="Dexterity:"
+            FontAttributes="Bold"/>
+        <Entry
+            Text="{Binding StatDexterity}"
+            Keyboard="Numeric"/>
+        <Label
+            Text="Constitution:"
+            FontAttributes="Bold"/>
+        <Entry
+            Text="{Binding StatConstitution}"
+            Keyboard="Numeric"/>
+        <Label
+            Text="Intelligence:"
+            FontAttributes="Bold"/>
+        <Entry
+            Text="{Binding StatIntelligence}"
+            Keyboard="Numeric"/>
+        <Label
+            Text="Wisdom:"
+            FontAttributes="Bold"/>
+        <Entry
+            Text="{Binding StatWisdom}"
+            Keyboard="Numeric"/>
+        <Label
+            Text="Charisma:"
+            FontAttributes="Bold"/>
+        <Entry
+            Text="{Binding StatCharisma}"
+            Keyboard="Numeric"/>
+    </VerticalStackLayout>
+</ContentPage>
