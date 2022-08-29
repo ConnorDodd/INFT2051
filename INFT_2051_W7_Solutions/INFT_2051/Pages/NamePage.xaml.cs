@@ -1,6 +1,7 @@
 using INFT_2051.Models;
+using INFT_2051.ViewModels;
 
-namespace INFT2051.Pages;
+namespace INFT_2051.Pages;
 
 public partial class NamePage : ContentPage
 {
@@ -14,6 +15,30 @@ public partial class NamePage : ContentPage
         var model = (CharacterModel)Parent.BindingContext;
         model.OnPropertyChanged("HPPercent");
         model.OnPropertyChanged("HPCurrent");
+    }
+
+    private async void SaveButton_Clicked(object sender, EventArgs e)
+    {
+        var model = (CharacterModel)Parent.BindingContext;
+        if (model.Name == null || model.Name.Length < 1)
+        {
+            await DisplayAlert("Warning", "You must enter a name before saving a character", "OK");
+            return;
+        }
+        CharacterViewModel.Current.SaveCharacter(model);
+
+        await Navigation.PopAsync();
+    }
+
+
+    private async void DeleteButton_Clicked(object sender, EventArgs e)
+    {
+        if (await DisplayAlert("Confirm Delete", "Are you sure you want to delete this character? This cannot be undone.", "Yes", "No") != true)
+            return;
+        var model = (CharacterModel)Parent.BindingContext;
+        CharacterViewModel.Current.DeleteCharacter(model);
+
+        await Navigation.PopAsync();
     }
 
     private async void LoadImage(object sender, EventArgs e)
@@ -30,7 +55,7 @@ public partial class NamePage : ContentPage
         }
         else
         {
-            PermissionStatus status = await GetCameraPermission();
+            PermissionStatus status = await GetMediaPermission();
             if (status == PermissionStatus.Granted)
             {
                 photo = await MediaPicker.PickPhotoAsync();

@@ -1,15 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using SQLite;
 
 namespace INFT_2051.Models
 {
+    [Table("characters")]
     public class CharacterModel : ObservableObject
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+
         //NamePage
         //This is how getters and setters are specified in C#
+        [MaxLength(260)]
         public string Name { get; set; }
         public string Class { get; set; }
         public int HPTotal { get; set; } = 1;

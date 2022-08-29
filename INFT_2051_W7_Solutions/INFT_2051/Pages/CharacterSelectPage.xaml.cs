@@ -1,51 +1,36 @@
 using INFT_2051.Models;
-using INFT2051.Pages;
+using INFT_2051.ViewModels;
 
 namespace INFT_2051.Pages;
 
 public partial class CharacterSelectPage : ContentPage
 {
-    public List<CharacterModel> Characters { get; set; }
+    CharacterViewModel viewModel;
 
     public CharacterSelectPage()
 	{
-        Characters = new List<CharacterModel>();
-        Characters.Add(new CharacterModel()
-        {
-            Name = "Character 1",
-            HPTotal = 15,
-            HPCurrent = 10,
-            StatDexterity = 6,
-            StatIntelligence = 8,
-            TraitIdeals = "Lorem Ipsum is simply dummy text"
-        });
-        Characters.Add(new CharacterModel()
-        {
-            Name = "Character 2",
-            HPTotal = 15,
-            HPCurrent = 10,
-            StatDexterity = 6,
-            StatIntelligence = 8,
-            TraitIdeals = "Lorem Ipsum is simply dummy text"
-        });
-        Characters.Add(new CharacterModel()
-        {
-            Name = "Character 3",
-            HPTotal = 15,
-            HPCurrent = 10,
-            StatDexterity = 6,
-            StatIntelligence = 8,
-            TraitIdeals = "Lorem Ipsum is simply dummy text"
-        });
-
-        BindingContext = this;
+        BindingContext = viewModel = new CharacterViewModel();
 
         InitializeComponent();
 	}
+
+    protected override void OnAppearing()
+    {
+        viewModel.OnPropertyChanged("Characters");
+    }
 
     private void CharacterSelectListView_ItemTapped(object sender, ItemTappedEventArgs e)
     {
         CharacterModel tapped = (CharacterModel)e.Item;
         Navigation.PushAsync(new CharacterTabPage(tapped));
+    }
+
+    private void AddCharacterButton_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new CharacterTabPage(new CharacterModel()
+        {
+            HPCurrent = 15,
+            HPTotal = 15
+        }));
     }
 }

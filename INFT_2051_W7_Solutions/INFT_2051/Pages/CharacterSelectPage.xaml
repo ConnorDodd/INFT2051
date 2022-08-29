@@ -25,6 +25,12 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+
+            <Button
+                x:Name="AddCharacterButton"
+                Text="Add Character"
+                HorizontalOptions="Center"
+                Clicked="AddCharacterButton_Clicked"/>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

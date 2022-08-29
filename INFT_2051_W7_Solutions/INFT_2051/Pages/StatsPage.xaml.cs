@@ -1,4 +1,4 @@
-namespace INFT2051.Pages;
+namespace INFT_2051.Pages;
 
 public partial class StatsPage : ContentPage
 {

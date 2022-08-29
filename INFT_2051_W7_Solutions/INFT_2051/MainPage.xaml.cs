@@ -1,6 +1,4 @@
 ﻿using INFT_2051.Pages;
-using INFT2051.Pages;
-
 namespace INFT_2051;
 
 public partial class MainPage : ContentPage

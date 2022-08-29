@@ -1,6 +1,6 @@
 using INFT_2051.Models;
 
-namespace INFT2051.Pages;
+namespace INFT_2051.Pages;
 
 
 public partial class CharacterTabPage : TabbedPage
