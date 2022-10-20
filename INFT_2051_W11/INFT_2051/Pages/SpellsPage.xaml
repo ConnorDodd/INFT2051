@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INFT_2051.Pages.SpellsPage"
+             Title="Spells">
+    <ScrollView
+        Padding="20"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        VerticalScrollBarVisibility="Always">
+        <VerticalStackLayout>
+            <Label
+                Text="Error"
+                x:Name="ErrorLabel"/>
+
+            <VerticalStackLayout
+                BindableLayout.ItemsSource="{Binding Spells}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate>
+                        <Label
+                            Text="{Binding Name}"
+                            Style="{StaticResource FormLabel}"/>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+
+            </VerticalStackLayout>
+            
+            <Button
+                x:Name="AddSpellButton"
+                HorizontalOptions="Center"
+                Text="Add Spell"
+                Clicked="AddSpellButton_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INFT_2051.Pages.CharacterSelectPage"
+             xmlns:converters="clr-namespace:INFT_2051.Converters"
+             xmlns:layouts="clr-namespace:INFT_2051.Layouts"
+             Title="CharacterSelectPage">
+    <ContentPage.Resources>
+        <converters:IsEmptyConverter x:Key="converter" />
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout
+            Margin="20">
+            <ActivityIndicator
+                IsRunning="True"
+                IsVisible="False">
+                <ActivityIndicator.Triggers>
+                    <DataTrigger
+                        TargetType="ActivityIndicator"
+                        Binding="{Binding Characters, Converter={StaticResource converter}}"
+                        Value="True">
+                        <Setter
+                            Property="IsVisible"
+                            Value="True"/>
+                    </DataTrigger>
+                </ActivityIndicator.Triggers>
+            </ActivityIndicator>
+            
+            <ListView
+                x:Name="CharacterSelectListView"
+                SelectionMode="None"
+                ItemTapped="CharacterSelectListView_ItemTapped"
+                ItemsSource="{Binding Characters}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <layouts:CharacterSelectView/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button
+                x:Name="AddCharacterButton"
+                Text="Add Character"
+                HorizontalOptions="Center"
+                Clicked="AddCharacterButton_Clicked"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
